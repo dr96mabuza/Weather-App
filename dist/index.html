@@ -8,9 +8,28 @@
   </head>
   <body>
     <div id="content">
-      <div id="header"></div>
-      <div id="main"></div>
-      <div id="footer"></div>
+      <div id="header">Weather App</div>
+      <div id="main">
+        <form id="myForm">
+          <div>
+            <label for="city">Enter City</label>
+            <input type="text" name="city" id="city" required />
+          </div>
+          <button type="submit" id="submitBtn">Search</button>
+        </form>
+        <div id="results">
+          <div class="temp"></div>
+          <div class="feels-like"></div>
+          <div class="temp-min"></div>
+          <div class="temp-max"></div>
+          <div class="pressure"></div>
+          <div class="humidity"></div>
+        </div>
+      </div>
+      <div id="footer">
+        Weather App &copy; Dr Mabuza. for odin project Fullstack JavaScript
+        course.
+      </div>
     </div>
     <script src="./bundle.js"></script>
   </body>
