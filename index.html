@@ -8,8 +8,8 @@
   </head>
   <body>
     <div id="content">
-      <h1 id="header">Weather App</h1>
-      <div id="main">
+      <div id="header">
+        <h1>Weather App</h1>
         <form id="myForm">
           <div>
             <label for="city">Enter City</label>
@@ -17,36 +17,26 @@
           </div>
           <button type="submit" id="submitBtn">Search</button>
         </form>
-        <div id="results">
-          <div id="temp">
-            <div class="text">Temp</div>
-            <div class="value" id="tempContainer"></div>
-            <div class="unit">fahrenheit</div>
-          </div>
-          <div id="feels-like">
-            <div class="text">feels-like</div>
-            <div class="value" id="feelsLikeContainer"></div>
-            <div class="unit">fahrenheit</div>
-          </div>
-          <div id="temp-min">
-            <div class="text">temp-min</div>
-            <div class="value" id="tempMinContainer"></div>
-            <div class="unit">fahrenheit</div>
-          </div>
-          <div id="temp-max">
-            <div class="text">temp-max</div>
-            <div class="value" id="tempMaxContainer"></div>
-            <div class="unit">fahrenheit</div>
-          </div>
-          <div id="pressure">
-            <div class="text">pressure</div>
-            <div class="value" id="pressureContainer"></div>
-            <div class="unit">Pa</div>
-          </div>
-          <div id="humidity">
-            <div class="text">humidity</div>
-            <div class="value" id="humidityContainer"></div>
-            <div class="unit"></div>
+      </div>
+      <div id="main">
+        <div id="container">
+          <div id="imageContainer"></div>
+          <div id="weatherInfoContainer">
+            <div id="upper">
+              <div id="location"></div>
+              <div id="unitInforContainer">
+                <div id="temp"></div>
+                <div class="unitContainer">
+                  <div id="humidity"></div>
+                  <div id="pressure"></div>
+                  <div id="wind"></div>
+                </div>
+              </div>
+            </div>
+            <div id="lower">
+              <div id="briefDescription"></div>
+              <div id="date"></div>
+            </div>
           </div>
         </div>
       </div>
