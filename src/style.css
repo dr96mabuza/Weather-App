@@ -5,49 +5,54 @@
 }
 
 #content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 50px minmax(300px, 100vh) 50px;
   width: 100%;
 }
 
 #header,
 #footer {
-  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #header {
-  top: 0%;
+  justify-content: space-between;
 }
 
 #footer {
-  bottom: 0;
+  justify-content: center;
+  font-size: 0.5rem;
 }
 
-#temp,
-#feels-like,
-#temp-min,
-#temp-max,
-#pressure,
-#humidity {
+#myForm :first-child,
+#myForm {
+  display: flex;
+  flex-direction: row;
+}
+
+/*info styling*/
+#container {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: 40% 60%;
 }
 
-#results {
-  display: block;
-  width: 300px;
-  border: 2px solid black;
-  padding: 4px 10px;
+#weatherInfoContainer {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  gap: 4px;
 }
 
-#main {
+#upper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#myForm :first-child {
+#unitInforContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 4px;
 }

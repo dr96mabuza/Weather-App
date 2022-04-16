@@ -1,10 +1,11 @@
 const getWeather = () => {
-  const tempContainer = document.querySelector("#tempContainer");
-  const feelsLikeContainer = document.querySelector("#feelsLikeContainer");
-  const tempMinContainer = document.querySelector("#tempMinContainer");
-  const tempMaxContainer = document.querySelector("#tempMaxContainer");
-  const humidityContainer = document.querySelector("#humidityContainer");
-  const pressureContainer = document.querySelector("#pressureContainer");
+  const location = document.querySelector("#location");
+  const temperature = document.querySelector("#temp");
+  const description = document.querySelector("#briefDescription");
+  const humidity = document.querySelector("#humidity");
+  const pressure = document.querySelector("#pressure");
+  const wind = document.querySelector("#wind");
+  const date = document.querySelector("#date");
 
   const getTemp = (name) => {
     fetch(
@@ -13,12 +14,14 @@ const getWeather = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        tempContainer.textContent = response.main.temp;
-        feelsLikeContainer.textContent = response.main.feels_like;
-        tempMinContainer.textContent = response.main.temp_min;
-        tempMaxContainer.textContent = response.main.temp_max;
-        pressureContainer.textContent = response.main.pressure;
-        humidityContainer.textContent = response.main.humidity;
+        console.log(response);
+        location.textContent = name;
+        temperature.textContent = response.main.temp;
+        description.textContent = response.weather[0].description;
+        humidity.textContent = response.main.humidity;
+        pressure.textContent = response.main.pressure;
+        wind.textContent = response.wind.speed;
+        date.textContent = new Date();
       })
       .catch((response) => {
         if (response !== Object) {
