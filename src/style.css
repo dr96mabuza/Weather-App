@@ -70,8 +70,28 @@
   gap: 4px;
 }
 
+#temp {
+  font-size: 3rem;
+}
+
+.unitContainer div {
+  font-size: 0.7rem;
+}
+
+.unitContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 #lower {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
