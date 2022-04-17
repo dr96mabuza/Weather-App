@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 const getWeather = () => {
   function capName(a) {
     return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase();
@@ -9,9 +11,7 @@ const getWeather = () => {
   }
 
   function photoWeatherRender(c) {
-    const imageContainer = document.querySelector("#imageContainer");
-    const photo = document.createElement("img");
-    imageContainer.appendChild(photo);
+    const photo = document.querySelector(".weatherImage");
     photo.src = c.data.images.original.url;
   }
 
@@ -24,12 +24,15 @@ const getWeather = () => {
     const date = document.querySelector("#date");
     const result = Number(d.main.temp) - 273.15;
 
+    const content = document.querySelector("#container");
+    content.style.display = "grid";
+
     temperature.textContent = Math.round(result);
     description.textContent = d.weather[0].description;
     humidity.textContent = `humidity: ${d.main.humidity} %`;
     pressure.textContent = `pressure: ${d.main.pressure} Pa`;
     wind.textContent = `wind speed: ${d.wind.speed} km/h`;
-    date.textContent = new Date();
+    date.textContent = format(new Date(), "EEEE. MMM dd. yyyy");
   }
 
   const getTemp = (name) => {

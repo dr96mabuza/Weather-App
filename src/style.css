@@ -8,12 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: whitesmoke;
 }
 
 #content {
   display: grid;
   grid-template-rows: 10vh 80vh 10vh;
-  width: 100%;
+  grid-template-columns: 1fr;
 }
 
 #header,
@@ -27,28 +28,41 @@
   justify-content: space-between;
 }
 
+#header :nth-child(2) {
+  margin-right: 10px;
+}
+#header :nth-child(1) {
+  margin-left: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
 #footer {
   justify-content: center;
   font-size: 0.5rem;
 }
 
-#myForm :first-child,
 #myForm {
   display: flex;
   flex-direction: row;
+  gap: 4px;
 }
 
-/*info styling*/
 #container {
   display: grid;
   grid-template-columns: 40% 60%;
-  height: 90%;
+  height: 80%;
   width: 90%;
+  background-color: white;
+
+  display: none;
 }
 
 #weatherInfoContainer {
   display: grid;
-  grid-template-rows: 70% 30%;
+  grid-template-rows: 80% 20%;
   gap: 4px;
 }
 
@@ -61,7 +75,7 @@
 
 #location {
   font-weight: bolder;
-  font-size: 60px;
+  font-size: 4rem;
 }
 
 #unitInforContainer {
@@ -88,10 +102,15 @@
 #lower {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 img {
   width: 100%;
   height: 100%;
+}
+
+#briefDescription,
+#date {
+  font-size: 0.7rem;
 }
