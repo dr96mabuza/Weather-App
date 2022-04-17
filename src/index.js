@@ -1,6 +1,6 @@
+import "./style.css";
 import getWeather from "./API";
 import checkInputError from "./DOM";
-import "./style.css";
 
 const temp = getWeather();
 
