@@ -52,7 +52,7 @@ button {
   height: 100vh;
   background-image: url("./images/tom-barrett-hgGplX3PFBg-unsplash.jpg");
   color: #cccccc;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 #leftSection {
   padding-top: 23px;
