@@ -1,116 +1,114 @@
 * {
-  padding: 0%;
-  margin: 0%;
   font-size: 16px;
 }
 
-#main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: whitesmoke;
-}
-
-#content {
-  display: grid;
-  grid-template-rows: 10vh 80vh 10vh;
-  grid-template-columns: 1fr;
-}
-
-#header,
-#footer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#header {
-  justify-content: space-between;
-}
-
-#header :nth-child(2) {
-  margin-right: 10px;
-}
-#header :nth-child(1) {
-  margin-left: 10px;
-}
-
 h1 {
+  font-size: 5rem;
+}
+
+h2 {
   font-size: 2rem;
 }
 
-#footer {
-  justify-content: center;
-  font-size: 0.5rem;
+h3 {
+  font-size: 1.5rem;
+}
+
+#content,
+#rightSection,
+#myForm,
+#leftSection,
+#TDT,
+.infoContainer {
+  display: flex;
+}
+
+#content,
+#myForm,
+#TDT,
+.infoContainer {
+  flex-direction: row;
+}
+
+#content,
+#leftSection,
+.infoContainer {
+  justify-content: space-between;
+}
+
+#rightSection,
+#leftSection {
+  flex-direction: column;
+  margin: 20px;
+}
+
+input,
+button {
+  border: 0;
+}
+
+#content {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./images/tom-barrett-hgGplX3PFBg-unsplash.jpg");
+  color: #cccccc;
+  background-size: cover;
+}
+#leftSection {
+  padding-top: 23px;
+  align-items: left;
+  height: 90vh;
+  padding-left: 25px;
+}
+
+#rightSection {
+  gap: 50px;
+}
+
+input {
+  border-bottom: solid white 2px;
+  margin-top: 20px;
+  background-color: black;
+  opacity: 0.3;
+  color: white;
 }
 
 #myForm {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
+  gap: 25px;
 }
 
-#container {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  height: 80%;
-  width: 90%;
-  background-color: white;
-
-  display: none;
+button {
+  background-color: orangered;
+  width: 50px;
+  height: 50px;
 }
 
-#weatherInfoContainer {
-  display: grid;
-  grid-template-rows: 80% 20%;
-  gap: 4px;
+#TDT {
+  gap: 15px;
 }
 
-#upper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#location {
-  font-weight: bolder;
-  font-size: 4rem;
-}
-
-#unitInforContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-}
-
-#temp {
-  font-size: 3rem;
-}
-
-.unitContainer div {
-  font-size: 0.7rem;
-}
-
-.unitContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-#lower {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+#FD-header {
+  border-bottom: solid white 2px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 img {
   width: 100%;
-  height: 100%;
 }
 
-#briefDescription,
-#date {
-  font-size: 0.7rem;
+.infoContainer {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 700px) {
+  #content,
+  #rightSection,
+  #leftSection {
+    flex-direction: column;
+  }
+
+  #myForm {
+    justify-content: space-between;
+  }
 }

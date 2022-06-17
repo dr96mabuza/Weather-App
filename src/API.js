@@ -10,11 +10,6 @@ const getWeather = () => {
     location.textContent = b;
   }
 
-  function photoWeatherRender(c) {
-    const photo = document.querySelector(".weatherImage");
-    photo.src = c.data.images.original.url;
-  }
-
   function renderWeather(d) {
     const temperature = document.querySelector("#temp");
     const description = document.querySelector("#briefDescription");
@@ -22,17 +17,16 @@ const getWeather = () => {
     const pressure = document.querySelector("#pressure");
     const wind = document.querySelector("#wind");
     const date = document.querySelector("#date");
+    const photo = document.querySelector("#weatherIcon");
     const result = Number(d.main.temp) - 273.15;
-
-    const content = document.querySelector("#container");
-    content.style.display = "grid";
 
     temperature.textContent = Math.round(result);
     description.textContent = d.weather[0].description;
-    humidity.textContent = `humidity: ${d.main.humidity} %`;
-    pressure.textContent = `pressure: ${d.main.pressure} Pa`;
-    wind.textContent = `wind speed: ${d.wind.speed} km/h`;
+    humidity.textContent = `${d.main.humidity} %`;
+    pressure.textContent = `${d.main.pressure} Pa`;
+    wind.textContent = `${d.wind.speed} km/h`;
     date.textContent = format(new Date(), "EEEE. MMM dd. yyyy");
+    photo.src = `http://openweathermap.org/img/w/${d.weather[0].icon}.png`;
   }
 
   const getTemp = (name) => {
@@ -46,19 +40,10 @@ const getWeather = () => {
       .then((response) => {
         renderWeather(response);
         renderLocation(cappedName);
-
-        fetch(
-          `https://api.giphy.com/v1/gifs/translate?api_key=RIIuJYIyG5MmEDmQ3ymmwqP1p365z4uU&s=${response.weather[0].main}}`,
-          { mode: "cors" }
-        )
-          .then((myData) => myData.json())
-          .then((myData) => photoWeatherRender(myData));
       })
 
-      .catch((response) => {
-        if (response !== Object) {
-          console.log(`${name} not found`);
-        }
+      .catch((error) => {
+        console.log(error);
       });
   };
   return { getTemp };

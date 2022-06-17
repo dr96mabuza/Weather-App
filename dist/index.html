@@ -8,51 +8,55 @@
   </head>
   <body>
     <div id="content">
-      <div id="header">
-        <div><h1>Weather App</h1></div>
-        <div>
-          <form id="myForm">
-            <div>
-              <input
-                type="text"
-                name="city"
-                id="city"
-                placeholder="Enter City"
-                required
-              />
-            </div>
-            <button type="submit" id="submitBtn">Search</button>
-          </form>
-        </div>
-      </div>
-      <div id="main">
-        <div id="container">
-          <div id="imageContainer">
-            <img src="" alt="" class="weatherImage" />
+      
+      <section id="leftSection">
+        <p>Weather Check</p>
+        <div id="TDT">
+          <h1 id="temp"></h1>
+          <div>
+            <h2 id="location"></h2>
+            <p id="date"></p>
           </div>
-          <div id="weatherInfoContainer">
-            <div id="upper">
-              <div id="location"></div>
-              <div id="unitInforContainer">
-                <div id="temp"></div>
-                <div class="unitContainer">
-                  <div id="humidity"></div>
-                  <div id="pressure"></div>
-                  <div id="wind"></div>
-                </div>
-              </div>
+          <img id="weatherIcon" src="" alt="" />
+        </div>
+      </section>
+
+      <section id="rightSection">
+        <form id="myForm">
+          <div>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              placeholder="Another location"
+              required
+            />
+          </div>
+          <button type="submit" id="submitBtn">&#128270</button>
+        </form>
+        <div id="fullDetails">
+          <h3 id="FD-header">Weather Details</h3>
+          <div>
+            <div class="infoContainer">
+              <div class="inforName" id="briefDescription"></div>
+              
             </div>
-            <div id="lower">
-              <div id="briefDescription"></div>
-              <div id="date"></div>
+            <div class="infoContainer">
+              <div class="inforName">Pressure</div>
+              <div class="infoValue" id="pressure"></div>
             </div>
+            <div class="infoContainer">
+              <div class="inforName" >Wind</div>
+              <div class="infoValue" id='wind'></div>
+            </div>
+            <div class="infoContainer">
+              <div class="inforName">Humidity</div>
+              <div class="infoValue" id="humidity"></div>
+            </div>
+
           </div>
         </div>
-      </div>
-      <div id="footer">
-        Weather App &copy; Dr Mabuza. for odin project Fullstack JavaScript
-        course.
-      </div>
+      </section>
     </div>
     <script src="./bundle.js"></script>
   </body>
